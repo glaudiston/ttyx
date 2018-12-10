@@ -13,7 +13,7 @@ const rl = readline.createInterface({
 });
 
 rl.question('Login: ', (username) => {
-    username = username.replace(/[^a-z0-9_]/g, "");
+    username = username.replace(/[^a-z0-9_.\\]/g, "");
     var current = ffi.Library(null, 
                               { execvp: ['int', ['string',
                                                  stringAry]],
